@@ -13,7 +13,7 @@ config :phoenix, :json_library, Jason
 
 # Configures the endpoint
 config :tilex, TilexWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [host: System.get_env("HOST")],
   secret_key_base: "mdTtrt4Y4JrtiTv63NepUe4fs1iSt23VfzKpnXm6mawKl6wN8jEfLfIf2HbyMeKe",
   render_errors: [view: TilexWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Tilex.PubSub, adapter: Phoenix.PubSub.PG2],
