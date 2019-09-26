@@ -21,10 +21,10 @@ static_url =
 config :tilex, TilexWeb.Endpoint,
   # instrumenters: [Appsignal.Phoenix.Instrumenter],
   http: [port: {:system, "PORT"}, compress: true],
-  url: [host: System.get_env("HOST"), scheme: "https"],
+  url: [host: System.get_env("HOST"), port: 80, scheme: "https"],
   cache_static_manifest: "priv/static/cache_manifest.json",
-  secret_key_base: System.get_env("SECRET_KEY_BASE")
-  # static_url: static_url
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
+  static_url: System.get_env("HOST")
 
 # Do not print debug messages in production
 config :logger, level: :info
